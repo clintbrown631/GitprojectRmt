@@ -132,7 +132,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     RECT Rect;
     unsigned int uiX, uiY;
     const COLORREF rgbBackground = RGB(0xf5, 0xf5, 0xdc);
-    wchar_t wszBuffer[] = L"Hello GIT World!";
+    wchar_t wszBuffer[] = L"Hello Sourcetree World!";
     HBRUSH hBrush;
     LOGFONT lLf;
     HFONT hFont;
