@@ -132,6 +132,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     RECT Rect;
     unsigned int uiX, uiY;
     const COLORREF rgbBackground = RGB(0xf5, 0xf5, 0xdc);
+    const COLORREF rgbText = RGB(0xff, 0x00, 0x00);
     wchar_t wszBuffer[] = L"Hello Sourcetree World!";
     HBRUSH hBrush;
     LOGFONT lLf;
@@ -166,6 +167,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         hBrush = CreateSolidBrush(rgbBackground);
         FillRect(hdc, &Rect, hBrush);
         SetBkColor(hdc, rgbBackground);
+        SetTextColor(hdc, rgbText);
         GetWindowRect(hWnd, &Rect);
         uiX = (Rect.right - Rect.left) / 2 - WIDTH * (ARRAYSIZE(wszBuffer) / 2);
         uiY = (Rect.bottom - Rect.top) / 2 - HEIGHT / 2;
