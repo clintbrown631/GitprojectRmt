@@ -133,7 +133,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     unsigned int uiX, uiY;
     const COLORREF rgbBackground = RGB(0xf5, 0xf5, 0xdc);
     const COLORREF rgbText = RGB(0xff, 0x00, 0x00);
-    wchar_t wszBuffer[] = L"Hello Sourcetree World!";
+    wchar_t wszBuffer[] = L"Hello Sourcetree World Examine Branch!";
     HBRUSH hBrush;
     LOGFONT lLf;
     HFONT hFont;
