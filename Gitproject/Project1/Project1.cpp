@@ -158,31 +158,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_PAINT:
-    {
-        PAINTSTRUCT ps;
-        HDC hdc = BeginPaint(hWnd, &ps);
-        GetWindowRect(hWnd, &Rect);
-        Rect.top = 0;
-        Rect.left = 0;
-        hBrush = CreateSolidBrush(rgbBackground);
-        FillRect(hdc, &Rect, hBrush);
-        SetBkColor(hdc, rgbBackground);
-        SetTextColor(hdc, rgbText);
-        GetWindowRect(hWnd, &Rect);
-        uiX = (Rect.right - Rect.left) / 2 - WIDTH * (ARRAYSIZE(wszBuffer) / 2);
-        uiY = (Rect.bottom - Rect.top) / 2 - HEIGHT / 2;
-        /* Specify Font and Colors Fors Text/Grid/Background */
-        memset(&lLf, NULL, sizeof(LOGFONT));
-        lLf.lfWidth = WIDTH;
-        lLf.lfHeight = HEIGHT;
-        lLf.lfCharSet = ANSI_CHARSET;
-        wcscpy(lLf.lfFaceName, L"DejaVu Sans Mono");
-        hFont = CreateFontIndirect(&lLf);
-        (HFONT)SelectObject(hdc, hFont);
-        TextOut(hdc,
-            uiX,
-            uiY,
-            wszBuffer, ARRAYSIZE(wszBuffer));
+        { 
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            GetWindowRect(hWnd, &Rect);
+            Rect.top = 0;
+            Rect.left = 0;
+            hBrush = CreateSolidBrush(rgbBackground);
+            FillRect(hdc, &Rect, hBrush);
+            SetBkColor(hdc, rgbBackground);
+            SetTextColor(hdc, rgbText);
+            GetWindowRect(hWnd, &Rect);
+            uiX = (Rect.right - Rect.left) / 2 - WIDTH * (ARRAYSIZE(wszBuffer) / 2);
+            uiY = (Rect.bottom - Rect.top) / 2 - HEIGHT / 2;
+            /* Specify Font and Colors Fors Text/Grid/Background */
+            memset(&lLf, NULL, sizeof(LOGFONT));
+            lLf.lfWidth = WIDTH;
+            lLf.lfHeight = HEIGHT;
+            lLf.lfCharSet = ANSI_CHARSET;
+            wcscpy(lLf.lfFaceName, L"DejaVu Sans Mono");
+            hFont = CreateFontIndirect(&lLf);
+            (HFONT)SelectObject(hdc, hFont);
+            TextOut(hdc,
+                uiX,
+                uiY,
+                wszBuffer, ARRAYSIZE(wszBuffer));
             EndPaint(hWnd, &ps);
         }
         break;
